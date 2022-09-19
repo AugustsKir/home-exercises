@@ -10,18 +10,15 @@ public class Exercise1Integers {
         Scanner n2 = new Scanner(System.in);
         System.out.println("Enter the second number");
         int num2 = n2.nextInt();
-        int diff1 = num1 - num2 ;
-        int diff2 = num2 - num1 ;
+        int diff = Math.abs(num1 - num2);
         int sum = num1 + num2;
 
-        if (diff1 == 15) {
-            System.out.println("True");;
-        } else if(diff2 == 15) {
-            System.out.println("True");;
-        } else if (sum == 15) {
+        if (diff == 15 || sum == 15 || num1 == 15 || num2 == 15) {
             System.out.println("True");
-        } else System.out.println("Wrong Numbers");
+        } else {
+            System.out.println("Wrong Numbers");
         }
-
     }
+
+}
 

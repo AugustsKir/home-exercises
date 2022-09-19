@@ -14,11 +14,10 @@ public class Exercise9Bmi {
 
         if (bmiCalc < 18.5) {
             System.out.println("Your BMI is " + bmiCalc + " That's considered underweight.");
-        }
-        else if (bmiCalc > 18.5 && bmiCalc < 25) {
+        } else if (bmiCalc > 18.5 && bmiCalc < 25) {
             System.out.println("Your BMI is " + bmiCalc + " That's considered optimal.");
+        } else {
+            System.out.println("Your BMI is " + bmiCalc + " That's considered overweight,");
         }
-        else System.out.println("Your BMI is " + bmiCalc + " That's considered overweight,");
-
     }
 }
