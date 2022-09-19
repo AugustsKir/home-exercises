@@ -9,6 +9,8 @@ public class Exercise2OddEven {
         int num = n.nextInt();
         if (num % 2 == 0) {
             System.out.println("The given number is even");
-        } else System.out.println("The given number is odd");
+        } else {
+            System.out.println("The given number is odd");
+        }
     }
 }
