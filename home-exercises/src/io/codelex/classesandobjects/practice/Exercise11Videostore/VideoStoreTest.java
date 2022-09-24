@@ -1,9 +1,11 @@
-package io.codelex.classesandobjects.practice.videostore;
+package io.codelex.classesandobjects.practice.Exercise11Videostore;
 
 import java.util.Scanner;
 
+import static io.codelex.classesandobjects.practice.Exercise11Videostore.VideoStore.*;
+
 public class VideoStoreTest {
-    private static final int COUNT_OF_MOVIES = 3;
+
 
     public static void main(String[] args) {
         final Scanner keyboard = new Scanner(System.in);
@@ -34,23 +36,5 @@ public class VideoStoreTest {
             }
 
         }
-    }
-
-    private static void fillVideoStore(Scanner scanner) {
-        for (int i = 0; i < COUNT_OF_MOVIES; i++) {
-            System.out.println("Enter movie name");
-            String movieName = scanner.next();
-            System.out.println("Enter rating");
-            int rating = scanner.nextInt();
-            //todo - add video
-        }
-    }
-
-    private static void rentVideo(Scanner scanner) {
-        //todo - rent video
-    }
-
-    private static void returnVideo(Scanner scanner) {
-        //todo - return video
     }
 }

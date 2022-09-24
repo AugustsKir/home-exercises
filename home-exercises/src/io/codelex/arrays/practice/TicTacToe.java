@@ -17,9 +17,17 @@ public class TicTacToe {
             System.out.println("Enter the row and column! ");
             row = keyboard.nextInt();
             column = keyboard.nextInt();
+            if (row > 2 || column > 2) {
+                System.out.println("Enter an index between 0 and 2! ");
+                continue;
+            }
             if (board[row][column] == 'x' || board[row][column] == 'o') {
                 System.out.println("Occupied");
                 continue;
+            }
+            if (findWinner(board)) {
+                System.out.println("The game has ended!");
+                break;
             }
             if (turn == 1) {
                 board[row][column] = 'x';
@@ -29,6 +37,10 @@ public class TicTacToe {
                 board[row][column] = 'o';
                 turn = 1;
                 displayBoard();
+            }
+            if (findWinner(board)) {
+                System.out.println("The game has ended!");
+                break;
             }
         }
 
@@ -45,14 +57,14 @@ public class TicTacToe {
     }
 
     public static boolean findWinner(char[][] board) {
-        return (board[0][0] == board[0][1] && board[0][0] == board[0][2]) ||
-                (board[0][0] == board[1][1] && board[0][0] == board[2][2]) ||
-                (board[0][0] == board[1][0] && board[0][0] == board[2][0]) ||
-                (board[2][0] == board[2][1] && board[2][0] == board[2][2]) ||
-                (board[2][0] == board[1][1] && board[0][0] == board[0][2]) ||
-                (board[0][2] == board[1][2] && board[0][2] == board[2][2]) ||
-                (board[0][1] == board[1][1] && board[0][1] == board[2][1]) ||
-                (board[1][0] == board[1][1] && board[1][0] == board[1][2]);
+        return (board [0][0] != ' ' && board[0][0] == board[0][1] && board[0][0] == board[0][2]) ||
+                (board [0][0] != ' ' && board[0][0] == board[1][1] && board[0][0] == board[2][2]) ||
+                (board [0][0] != ' ' && board[0][0] == board[1][0] && board[0][0] == board[2][0]) ||
+                (board [2][0] != ' ' && board[2][0] == board[2][1] && board[2][0] == board[2][2]) ||
+                (board [2][0] != ' ' && board[2][0] == board[1][1] && board[0][0] == board[0][2]) ||
+                (board [0][2] != ' ' && board[0][2] == board[1][2] && board[0][2] == board[2][2]) ||
+                (board [0][1] != ' ' && board[0][1] == board[1][1] && board[0][1] == board[2][1]) ||
+                (board [1][0] != ' ' && board[1][0] == board[1][1] && board[1][0] == board[1][2]);
 
     }
 

@@ -5,38 +5,30 @@ import java.util.Scanner;
 
 public class LitersPerKilometer {
     public static void main(String[] args) {
+        Car car = getData();
+        Scanner in = new Scanner(System.in);
+        System.out.println("Enter mileage");
+        double mileage = in.nextDouble();
+        System.out.println("Enter liters");
+        double liters = in.nextDouble();
+        car.fillUp(mileage, liters);
+
+
+        System.out.println("KM/L + " +  car.calculateConsumption());
+
+
+    }
+
+    private static Car getData() {
         Scanner scan = new Scanner(System.in);
 
-        double startKilometers, endKilometers, liters;
+        double startKilometers;
 
         System.out.print("Enter first reading: ");
         startKilometers = scan.nextDouble();
 
-        System.out.print("Enter second reading: ");
-        endKilometers = scan.nextDouble();
 
-        System.out.print("Enter liters consumed: ");
-        liters = scan.nextDouble();
-
-        Car car = new Car(startKilometers, endKilometers, liters);
-
-        System.out.print("Enter first reading: ");
-        startKilometers = scan.nextDouble();
-
-        System.out.print("Enter second reading: ");
-        endKilometers = scan.nextDouble();
-
-        System.out.print("Enter liters consumed: ");
-        liters = scan.nextDouble();
-
-        Car car2 = new Car(startKilometers, endKilometers, liters);
-
-
-        System.out.println("Kilometers per liter are " + car.CalculateConsumption() + " and " + car2.CalculateConsumption());
-        System.out.println("Car number 1 is an economic car: " + car.isEconomyCar());
-        System.out.println("Car number 1 is a gashog: " + car.isGasHog());
-        System.out.println("Car number 2 is an economic car: " + car2.isEconomyCar());
-        System.out.println("Car number 2 is a gashog: " + car2.isGasHog());
+        return new Car(startKilometers);
     }
 
 }

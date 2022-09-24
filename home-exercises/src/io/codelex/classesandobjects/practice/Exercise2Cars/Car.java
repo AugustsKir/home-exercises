@@ -7,21 +7,29 @@ public class Car {
 
     public Car(double startKilometers, double endKilometers, double liters) {
         this.startKilometers = startKilometers;
-        this.endKilometers = endKilometers;
-        this.liters = liters;
+        this.endKilometers = startKilometers;
+        this.liters = 0;
+
     }
 
-    public double CalculateConsumption() {
+    public Car(double startKilometers) {
+    }
+
+    public double calculateConsumption() {
         return liters / ((endKilometers - startKilometers) / 100);
     }
 
     public boolean isGasHog() {
-        return CalculateConsumption() > 15;
+        return calculateConsumption() > 15;
     }
 
     public boolean isEconomyCar() {
-        return CalculateConsumption() < 15;
+        return calculateConsumption() < 15;
     }
 
 
+    public void fillUp(double mileage, double liters) {
+        endKilometers=mileage;
+        this.liters = liters;
+    }
 }
