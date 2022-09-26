@@ -1,4 +1,4 @@
-package io.codelex.classesandobjects.practice;
+package io.codelex.classesandobjects.practice.Exercise13Account;
 
 public class Account {
     private double balance;
@@ -19,6 +19,10 @@ public class Account {
 
     public double balance() {
         return balance;
+    }
+    public static void transfer(Account from, Account to, double howMuch) {
+        from.withdrawal(howMuch);
+        to.deposit(howMuch);
     }
 
     @Override

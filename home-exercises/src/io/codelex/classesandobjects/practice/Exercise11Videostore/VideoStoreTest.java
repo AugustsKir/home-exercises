@@ -16,23 +16,20 @@ public class VideoStoreTest {
             System.out.println("Choose 1 to fill video store");
             System.out.println("Choose 2 to rent video (as user)");
             System.out.println("Choose 3 to return video (as user)");
+            System.out.println("Choose 4 to add a rating");
+            System.out.println("Choose 5 to check inventory status");
 
             int n = keyboard.nextInt();
 
             switch (n) {
-                case 0:
-                    System.exit(0);
-                case 1:
-                    fillVideoStore(keyboard);
-                    break;
-                case 2:
-                    rentVideo(keyboard);
-                    break;
-                case 3:
-                    returnVideo(keyboard);
-                    break;
-                default:
-                    break;
+                case 0 -> System.exit(0);
+                case 1 -> fillVideoStore(keyboard);
+                case 2 -> rentVideo(keyboard);
+                case 3 -> returnVideo(keyboard);
+                case 4 -> addRating(keyboard);
+                case 5 -> getInfo(keyboard);
+                default -> {
+                }
             }
 
         }

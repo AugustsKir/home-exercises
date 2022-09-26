@@ -42,6 +42,23 @@ public class VideoStore {
             }
         }
     }
+    static void addRating(Scanner scanner) {
+        System.out.println("Enter the movie name that you want to rate");
+        String name = scanner.nextLine();
+        if (!Video.title.equals(name)) {
+            System.out.println("Movie not found");
+        } else {
+            System.out.println("Enter the rating");
+            Video.ratings.add(scanner.nextInt());
+        }
+
+
+    }
+    public static void calcRating(Scanner scanner) {
+        if(!Video.ratings.isEmpty()) {
+            System.out.println(Video.ratings.stream().mapToDouble(d -> d).average());
+        } else System.out.println("No ratings present");;
+    }
     static void getInfo(Scanner scanner) {
         System.out.println(inventory);
     }
