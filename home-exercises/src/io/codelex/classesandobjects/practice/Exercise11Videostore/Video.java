@@ -6,9 +6,24 @@ import java.util.Scanner;
 public class Video {
 
     static String title;
-    boolean checkedOut;
+    static boolean checkedOut;
+
+
 
     static ArrayList<Integer> ratings = new ArrayList<>();
+
+    public static String getTitle() {
+        return title;
+    }
+
+    public static void setTitle(String title) {
+        Video.title = title;
+    }
+
+    public static boolean getCheckedOut() {
+        return checkedOut;
+    }
+
     public Video(String title) {
         this.title = title;
         checkedOut = false;
@@ -16,13 +31,15 @@ public class Video {
 
     }
 
+
+
     public void setCheckedOut(boolean checkedOut) {
-        this.checkedOut = checkedOut;
+        Video.checkedOut = checkedOut;
     }
 
     @Override
     public String toString() {
-        return " || Current inventory status : " + title + " is the movie rented out: " + checkedOut;
+        return " || Current inventory status : " + title + " is the movie rented out: " + checkedOut + " Average rating: " + Video.ratings.stream().mapToDouble(d -> d).average();
     }
 
 

@@ -1,67 +1,80 @@
 package io.codelex.classesandobjects.practice.Exercise11Videostore;
 
 import java.util.ArrayList;
+import java.util.OptionalDouble;
 import java.util.Scanner;
 
 public class VideoStore {
     private static final int COUNT_OF_MOVIES = 3;
     static ArrayList<Video> inventory = new ArrayList<>();
-    static ArrayList<Video> fullInventory = new ArrayList<>();
+
 
     public VideoStore() {
+    }
+    static public boolean containsMovie(ArrayList<Video> inventory, String title) {
+        return inventory.stream().anyMatch(o -> Video.getTitle().equals(title));
     }
     public static void fillVideoStore(Scanner scanner) {
             System.out.println("Enter movie name");
             String movieName = scanner.next();
             Video newMovie = new Video(movieName);
             inventory.add(newMovie);
-            fullInventory.add(newMovie);
 
 
     }
-
-    static void rentVideo(Scanner scanner) {
+    static void rentVideo() {
         System.out.println("Enter a movie name to rent");
-        String movieName = scanner.nextLine();
-        for(Video obj : inventory) {
-            if (obj.title.equals(movieName)) {
-            inventory.remove(obj);
-            obj.setCheckedOut(true);
+        Scanner in = new Scanner(System.in);
+        String movieName = in.nextLine();
+        for (Video obj : inventory) {
+            if(Video.title.equals(movieName) && !Video.getCheckedOut()) {
+                obj.setCheckedOut(true);
                 System.out.println(movieName + " rented successfully");
-            }
+            } else System.out.println("Movie not in our catalog");
         }
     }
 
-    static void returnVideo(Scanner scanner) {
+
+
+    static void returnVideo() {
         System.out.println("Enter a movie name to return");
-        String movieName = scanner.nextLine();
-        for (Video obj : fullInventory) {
-            if(obj.title.equals(movieName)) {
+        Scanner in = new Scanner(System.in);
+        String movieName = in.nextLine();
+        for (Video obj : inventory) {
+            if(Video.title.equals(movieName)) {
                 inventory.add(obj);
+                obj.setCheckedOut(false);
                 System.out.println(movieName + " returned successfully");
-            }
+            } else System.out.println("Movie not in our catalog");
         }
     }
-    static void addRating(Scanner scanner) {
+    static void addRating() {
         System.out.println("Enter the movie name that you want to rate");
-        String name = scanner.nextLine();
+        Scanner in = new Scanner(System.in);
+        String name = in.nextLine();
         if (!Video.title.equals(name)) {
             System.out.println("Movie not found");
         } else {
             System.out.println("Enter the rating");
-            Video.ratings.add(scanner.nextInt());
+            Video.ratings.add(in.nextInt());
         }
 
 
     }
-    public static void calcRating(Scanner scanner) {
-        if(!Video.ratings.isEmpty()) {
-            System.out.println(Video.ratings.stream().mapToDouble(d -> d).average());
-        } else System.out.println("No ratings present");;
+    static void calcRating() {
+        System.out.println("Enter the movie name to get average rating");
+        Scanner in = new Scanner(System.in);
+        String title = in.nextLine();
+        if (Video.title.equals(title)) {
+            if (Video.ratings.isEmpty()) {
+                System.out.println("No ratings present");
+            } else System.out.println(Video.ratings.stream().mapToDouble(d -> d).average());
+        } else System.out.println("Movie not present"); ;
     }
     static void getInfo(Scanner scanner) {
         System.out.println(inventory);
     }
+
 
 
 }
