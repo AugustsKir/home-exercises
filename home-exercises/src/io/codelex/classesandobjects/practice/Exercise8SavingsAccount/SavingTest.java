@@ -17,7 +17,7 @@ public class SavingTest {
         int totalInterest = 0;
 
 
-        for (int i = 1; i <= months ; i++) {
+        for (int i = 1; i <= months; i++) {
             System.out.println("Enter the amount deposited for month number " + i);
             currentDep = in.nextInt();
             totalDeposit += currentDep;
@@ -36,12 +36,6 @@ public class SavingTest {
         System.out.println("Ending balance: " + newAcc.getBalance());
 
     }
-
-
-
-
-
-
 
 
     private static SavingsAccount getData() {

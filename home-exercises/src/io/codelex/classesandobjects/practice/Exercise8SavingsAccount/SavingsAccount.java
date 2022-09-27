@@ -24,9 +24,10 @@ public class SavingsAccount {
     public void addMoney(int sum) {
         this.balance += sum;
     }
+
     public void withdrawMoney(int sum) {
         this.balance -= sum;
     }
 
-    }
+}
 

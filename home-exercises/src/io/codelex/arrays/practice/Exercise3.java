@@ -9,11 +9,10 @@ public class Exercise3 {
 
         //fixme - calculate sum of all array elements
         int sum = 0;
-        for (int i = 0; i < numbers.length ; i++) {
+        for (int i = 0; i < numbers.length; i++) {
             sum += numbers[i];
         }
-        double average = (double)sum / numbers.length;
-
+        double average = (double) sum / numbers.length;
 
 
         //fixme - calculate average value

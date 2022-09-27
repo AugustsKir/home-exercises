@@ -59,10 +59,12 @@ public class Dog {
         this.name = name;
         this.gender = gender;
     }
+
     public String fathersName() {
         return Objects.requireNonNullElse(this.father, "Unknown");
 
     }
+
     public boolean hasSameMotherAs(Dog dog) {
         return Objects.equals(this.mother, dog.getMother());
     }

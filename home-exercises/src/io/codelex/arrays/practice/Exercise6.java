@@ -9,12 +9,12 @@ public class Exercise6 {
         int[] numArr = new int[10];
         int min = 1;
         int max = 100;
-        for (int i = 0; i < numArr.length ; i++) {
+        for (int i = 0; i < numArr.length; i++) {
             numArr[i] = rn.nextInt(max - min) + min;
         }
         System.out.println("Array 1: " + Arrays.toString(numArr));
         int[] numArr2 = numArr;
-        for (int i = 0; i < numArr2.length ; i++) {
+        for (int i = 0; i < numArr2.length; i++) {
             if (i == numArr2.length - 1) {
                 numArr2[i] = -7;
             }

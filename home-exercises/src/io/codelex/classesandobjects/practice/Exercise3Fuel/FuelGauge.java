@@ -15,14 +15,16 @@ public class FuelGauge {
     public FuelGauge(double currentFuel) {
         this.currentFuel = currentFuel;
     }
+
     public void fillUp() {
-        if(currentFuel < MAX_FUEL) {
+        if (currentFuel < MAX_FUEL) {
             currentFuel++;
         } else {
             System.out.println("Tank is Full!");
         }
 
     }
+
     public void burnFuel() {
         if (currentFuel > 0) {
             currentFuel--;

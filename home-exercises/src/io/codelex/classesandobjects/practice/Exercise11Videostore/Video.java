@@ -1,13 +1,11 @@
 package io.codelex.classesandobjects.practice.Exercise11Videostore;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Video {
 
     static String title;
     static boolean checkedOut;
-
 
 
     static ArrayList<Integer> ratings = new ArrayList<>();
@@ -30,7 +28,6 @@ public class Video {
 
 
     }
-
 
 
     public void setCheckedOut(boolean checkedOut) {

@@ -32,6 +32,7 @@ public class Point {
         this.p1 = p1;
         this.p2 = p2;
     }
+
     public static void swapPoints(Point p1) {
         int temp = p1.getP1();
         p1.setP1(p1.getP2());

@@ -17,10 +17,11 @@ public class Movie {
         this.studio = studio;
         this.rating = "PG13";
     }
+
     public static Movie[] getPG(Movie[] film) {
         Movie[] pgFilm = new Movie[film.length];
         int index = 0;
-        for (int i = 0; i < film.length ; i++) {
+        for (int i = 0; i < film.length; i++) {
             if (film[i].rating.equals("PG")) {
                 pgFilm[index] = film[i];
                 index++;

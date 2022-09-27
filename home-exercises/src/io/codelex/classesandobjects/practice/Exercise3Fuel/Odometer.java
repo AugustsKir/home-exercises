@@ -5,6 +5,7 @@ public class Odometer {
     private int startMileage;
     private FuelGauge fuelGauge;
     private final int MAX_MILEAGE = 999999;
+
     public int getMileage() {
         return mileage;
     }
@@ -18,6 +19,7 @@ public class Odometer {
         this.mileage = mileage;
         this.fuelGauge = fuelGauge;
     }
+
     public void odoUp() {
         if (mileage < MAX_MILEAGE) {
             mileage++;
@@ -29,7 +31,6 @@ public class Odometer {
             fuelGauge.burnFuel();
         }
     }
-
 
 
 }

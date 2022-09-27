@@ -27,7 +27,5 @@ public class DogTest {
         System.out.println(dog8coco.hasSameMotherAs(dog2rocky));
 
 
-
-
     }
 }

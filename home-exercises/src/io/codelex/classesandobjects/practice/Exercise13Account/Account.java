@@ -20,6 +20,7 @@ public class Account {
     public double balance() {
         return balance;
     }
+
     public static void transfer(Account from, Account to, double howMuch) {
         from.withdrawal(howMuch);
         to.deposit(howMuch);

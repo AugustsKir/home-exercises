@@ -23,12 +23,11 @@ public class Exercise1 {
         };
 
 
-
         System.out.println("Original numeric array : " + Arrays.toString(myArray1));
         Arrays.sort(myArray1);
-        System.out.println("Sorted numeric array : " + Arrays.toString(myArray1) );
+        System.out.println("Sorted numeric array : " + Arrays.toString(myArray1));
 
-        System.out.println("Original string array : " + Arrays.toString(myArray2) );
+        System.out.println("Original string array : " + Arrays.toString(myArray2));
         Arrays.sort(myArray2);
         System.out.println("Sorted string array : " + Arrays.toString(myArray2));
 

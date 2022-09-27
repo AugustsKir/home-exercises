@@ -14,7 +14,7 @@ public class LitersPerKilometer {
         car.fillUp(mileage, liters);
 
 
-        System.out.println("KM/L + " +  car.calculateConsumption());
+        System.out.println("KM/L + " + car.calculateConsumption());
 
 
     }

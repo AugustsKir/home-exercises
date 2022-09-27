@@ -29,7 +29,7 @@ public class Car {
 
 
     public void fillUp(double mileage, double liters) {
-        endKilometers=mileage;
+        endKilometers = mileage;
         this.liters = liters;
     }
 }

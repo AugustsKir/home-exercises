@@ -1,7 +1,6 @@
 package io.codelex.arrays.practice;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -21,7 +20,7 @@ public class Exercise2 {
         List<Integer> arrList = new ArrayList<Integer>();
         int sum = 0;
 
-        for (int i = minNumber; i <= maxNumber ; i++) {
+        for (int i = minNumber; i <= maxNumber; i++) {
             arrList.add(i);
             sum += i;
         }

@@ -4,7 +4,7 @@ public class MainApp {
     public static void main(String[] args) {
         FuelGauge fuel = new FuelGauge(0);
         Odometer odometer = new Odometer(0, fuel);
-        for (int i = 0; i < FuelGauge.MAX_FUEL ; i++) {
+        for (int i = 0; i < FuelGauge.MAX_FUEL; i++) {
             fuel.fillUp();
         }
         while (fuel.getCurrentFuel() > 0) {

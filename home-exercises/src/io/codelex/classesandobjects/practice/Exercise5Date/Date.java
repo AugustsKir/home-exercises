@@ -35,6 +35,7 @@ public class Date {
     public void setDay(String day) {
         this.day = day;
     }
+
     public void displayDate() {
         System.out.println(getYear() + "/" + getMonth() + "/" + getDay());
     }

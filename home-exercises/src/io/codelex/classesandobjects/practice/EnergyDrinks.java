@@ -1,7 +1,5 @@
 package io.codelex.classesandobjects.practice;
 
-import io.codelex.NoCodeWrittenException;
-
 public class EnergyDrinks {
     static final int NUMBERED_SURVEYED = 12467;
     static final double PURCHASED_ENERGY_DRINKS = 0.14;

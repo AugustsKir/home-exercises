@@ -14,7 +14,7 @@ public class BankAccount {
 
     @Override
     public String toString() {
-        if(balance < 0) {
+        if (balance < 0) {
             return name + ", -$" + Math.abs(balance);
         } else {
             return name + ", $" + balance;
