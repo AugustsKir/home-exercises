@@ -10,7 +10,7 @@ public class Exercise6FizzBuzz {
         int i;
 
         for (i = 1; i <= maxValue; i++) {
-            if(i % 5 == 0 & i % 3 == 0) {
+            if(i % 5 == 0 && i % 3 == 0) {
                 System.out.print(" FizzBuzz ");
             } else if (i % 5 == 0) {
                 System.out.print(" Buzz ");
