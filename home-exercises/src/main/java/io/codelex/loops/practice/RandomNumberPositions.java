@@ -7,7 +7,7 @@ import java.util.*;
 public class RandomNumberPositions {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Integer[] integers = randomIntegers(20);
+        Integer[] integers = randomIntegers();
         System.out.println("There are few integers given: " + Arrays.toString(integers));
         System.out.println("Which number index would you like to find?");
 
@@ -33,14 +33,14 @@ public class RandomNumberPositions {
         }
     }
 
-    private static Integer[] randomIntegers(int n) {
+
+    private static Integer[] randomIntegers() {
         Random rand = new Random();
         int givenInt;
-        List<Integer> list = new ArrayList<>(n);
+        List<Integer> list = new ArrayList<>(20);
 
-        for (int i = 0; i < n; i++) {
-            givenInt = rand.nextInt(99);
-            list.add(givenInt);
+        for (int i = 0; i < 20; i++) {
+            list.add(rand.nextInt(99));
 
         }
         return list.toArray(new Integer[0]);

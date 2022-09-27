@@ -3,6 +3,7 @@ package io.codelex.loops.practice;
 import java.util.Scanner;
 
 public class Exercise5Dots {
+    static final int ROW_NUMBER = 30;
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         System.out.println("Enter the first word! ");
@@ -10,7 +11,7 @@ public class Exercise5Dots {
         System.out.println("Enter the second word! ");
         String secondWord = in.nextLine();
         int wordLength = (firstWord +  "" + secondWord).length();
-        int spaces = 30 - wordLength;
+        int spaces = ROW_NUMBER - wordLength;
         int i;
         String dots = ".";
         String finalDots = "";

@@ -11,7 +11,6 @@ public class MultiplyByItself {
         Scanner in = new Scanner(System.in);
         n = in.nextInt();
         result = 1;
-        p = n;
 
 
         //todo - complete loop to multiply i with itself n times, it is NOT allowed to use Math.pow()
