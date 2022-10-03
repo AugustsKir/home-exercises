@@ -12,8 +12,9 @@ public class DatePeriod {
         this.end = end;
     }
     /*public DatePeriod intersection(DatePeriod period) {
+
         if (this.start.isBefore(period.end) && period.start.isBefore(this.end)) {
-            System.out.println("Intersection found!");;
+
         }
-    } */
+    }*/
 }

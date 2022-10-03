@@ -1,4 +1,4 @@
-package io.codelex.oop.Exercise1Shapes;
+package io.codelex.oop.Exercise1910Shapes;
 
 public abstract class Shape {
     private int numSides;

@@ -1,4 +1,4 @@
-package io.codelex.oop.Exercise1Shapes;
+package io.codelex.oop.Exercise1910Shapes;
 
 public class Rectangle extends Shape {
     private int height;
