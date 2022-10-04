@@ -11,8 +11,6 @@ public class Car extends Manufacturer {
     EngineType engine;
 
 
-
-
     public Car(String name, LocalDate yearOfEstablishment, String country, String model, int price, LocalDate modelYear, EngineType engine) {
         super(name, yearOfEstablishment, country);
         this.name = name;
@@ -21,6 +19,7 @@ public class Car extends Manufacturer {
         this.modelYear = modelYear;
         this.engine = engine;
     }
+
     public LocalDate getModelYear() {
         return modelYear;
     }
@@ -46,6 +45,7 @@ public class Car extends Manufacturer {
     public int getPrice() {
         return price;
     }
+
     public String getModel() {
         return model;
     }

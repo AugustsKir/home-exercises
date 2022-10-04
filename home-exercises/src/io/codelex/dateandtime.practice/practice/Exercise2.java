@@ -13,7 +13,7 @@ public class Exercise2 {
         int times = in.nextInt();
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd.MM.yyyy");
         LocalDate startDate = LocalDate.parse(date, dtf);
-        for (int i = 1; i <= times ; i++) {
+        for (int i = 1; i <= times; i++) {
             LocalDate week2 = startDate.plusWeeks(2L * i);
             System.out.println("Update number " + i + " will be held on " + week2);
         }

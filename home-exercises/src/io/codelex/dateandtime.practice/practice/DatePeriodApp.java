@@ -13,6 +13,7 @@ public class DatePeriodApp {
         LocalDate secondEnd = LocalDate.of(2022, 1, 25);
         DatePeriod secondPeriod = new DatePeriod(secondStart, secondEnd);
 
-        //DatePeriod overlap = firstPeriod.intersection(secondPeriod);
+        DatePeriod overlap = firstPeriod.intersection(secondPeriod);
+        System.out.println(overlap);
     }
 }

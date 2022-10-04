@@ -2,6 +2,7 @@ package io.codelex.oop.Exercise1910Shapes;
 
 public class Qube extends ThreeDimensionalShape {
     private final int side;
+
     public Qube(int numSides, int side) {
         super(numSides);
         this.side = side;

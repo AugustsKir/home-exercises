@@ -3,6 +3,7 @@ package io.codelex.oop.Exercise1910Shapes;
 public class Cone extends ThreeDimensionalShape {
     private final int radius;
     private final int height;
+
     public Cone(int numSides, int radius, int height) {
         super(numSides);
         this.radius = radius;

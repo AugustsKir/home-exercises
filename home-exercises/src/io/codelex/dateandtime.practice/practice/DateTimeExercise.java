@@ -1,5 +1,6 @@
 package io.codelex.dateandtime.practice.practice;
 
+import java.time.DayOfWeek;
 import java.time.LocalDate;
 
 public class DateTimeExercise {
@@ -17,6 +18,12 @@ public class DateTimeExercise {
     }
 
     public static LocalDate findNextFriday13th(LocalDate from) {
-        throw new UnsupportedOperationException();
+        LocalDate current = from;
+        while (current.getDayOfMonth() != 13 || !current.getDayOfWeek().equals(DayOfWeek.FRIDAY)) {
+            current = current.plusDays(1);
+        }
+        return current;
+
+
     }
 }

@@ -1,10 +1,10 @@
 package io.codelex.oop.Exercise1910Shapes;
 
 public class Triangle extends Shape {
-    private int sideA;
-    private int sideB;
-    private int sideC;
-    private int height;
+    private final int sideA;
+    private final int sideB;
+    private final int sideC;
+    private final int height;
 
     public Triangle(int numSides, int sideA, int sideB, int sideC, int height) {
         super(numSides);

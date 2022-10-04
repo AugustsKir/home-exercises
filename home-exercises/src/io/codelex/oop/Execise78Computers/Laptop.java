@@ -4,6 +4,7 @@ import java.util.Objects;
 
 public class Laptop extends Computer {
     String battery;
+
     public Laptop(String processor, String ram, String graphicsGard, String company, String model, String battery) {
         super(processor, ram, graphicsGard, company, model);
         this.battery = battery;

@@ -6,6 +6,6 @@ public enum EngineType {
     V6,
     S6,
     S4,
-    S3;
+    S3
 
 }

@@ -1,10 +1,10 @@
 package io.codelex.oop.Exercise2Persons;
 
 public abstract class Person {
-    private String firstName;
-    private String lastName;
-    private String id;
-    private int age;
+    private final String firstName;
+    private final String lastName;
+    private final String id;
+    private final int age;
 
     public Person(String firstName, String lastName, String id, int age) {
         this.firstName = firstName;
@@ -28,5 +28,6 @@ public abstract class Person {
     public int getAge() {
         return age;
     }
+
     public abstract String getInfo();
 }

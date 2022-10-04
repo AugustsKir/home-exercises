@@ -20,7 +20,6 @@ public class Parcel implements Validatable {
     }
 
 
-
     @Override
     public boolean validate() {
         if (xLength + zLength + yLength <= 300 && xLength <= 30 && yLength <= 30 && zLength <= 30) {
