@@ -2,6 +2,7 @@ package io.codelex.collections.practice.lists;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Stream;
 
 @SuppressWarnings("Duplicates")
 public class ArrayListExercise9 {
@@ -24,7 +25,8 @@ public class ArrayListExercise9 {
         System.out.println("List of second array: " + secondList);
 
         //TODO: Write a Java program to join two array lists.
-        //...
+        List<String> finalList = Stream.concat(firstList.stream(), secondList.stream()).toList();
+        System.out.println(finalList);
     }
 
 }
