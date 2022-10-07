@@ -1,51 +1,56 @@
 package io.codelex.collections.practice.phonebook;
 
-import java.util.Arrays;
+import java.util.Scanner;
+import java.util.TreeMap;
 
 public class PhoneDirectory {
-    private PhoneEntry[] data;
-    private int dataCount;
+    static Scanner in = new Scanner(System.in);
+
+
+    private static TreeMap<String, String> data = new TreeMap<>();
+    private static int dataCount;
 
     public PhoneDirectory() {
-        data = new PhoneEntry[1];
+        data = new TreeMap<>();
         dataCount = 0;
     }
 
-    private int find(String name) {
-        for (int i = 0; i < dataCount; i++) {
-            if (data[i].name.equals(name)) {
-                return i;
-            }
-        }
-        return -1;
+    public static TreeMap<String, String> getData() {
+        return data;
     }
 
-    public String getNumber(String name) {
-        int position = find(name);
-        if (position == -1) {
-            return null;
-        } else {
-            return data[position].number;
-        }
+    public static int getDataCount() {
+        return dataCount;
     }
 
-    public void putNumber(String name, String number) {
+    private static boolean find(String name) {
+        return data.containsKey(name);
+    }
+
+    public static String getNumber(String name) {
+        if (find(name)) {
+            return data.get(name);
+        } else return "Not found";
+    }
+
+    public static void putNumber(String name, String number) {
         if (name == null || number == null) {
             throw new IllegalArgumentException("name and number cannot be null");
         }
-        int i = find(name);
-        if (i >= 0) {
-            data[i].number = number;
-        } else {
-            if (dataCount == data.length) {
-                data = Arrays.copyOf(data, 2 * data.length);
+        if (data.containsKey(name)) {
+            System.out.println("This name already exists, do you wish to overwrite the number? y/n");
+            if (in.nextLine().equals("n")) {
+                System.exit(0);
             }
-            PhoneEntry newEntry = new PhoneEntry();  // Create a new pair.
-            newEntry.name = name;
-            newEntry.number = number;
-            data[dataCount] = newEntry;   // Add the new pair to the array.
-            dataCount++;
-        }
+        } else data.put(name, number);
+        dataCount++;
+
     }
+
+    @Override
+    public String toString() {
+        return data.toString();
+    }
+
 
 }

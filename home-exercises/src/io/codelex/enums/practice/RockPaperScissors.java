@@ -4,13 +4,13 @@ public enum RockPaperScissors {
     ROCK("r"),
     PAPER("p"),
     SCISSORS("s");
-    private String input;
-
+    private final String input;
 
 
     RockPaperScissors(String input) {
         this.input = input;
     }
+
     public String getInput() {
         return input;
     }

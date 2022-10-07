@@ -11,7 +11,7 @@ public class Exercise4Names {
         while (true) {
             System.out.println("Enter a name");
             String name = in.nextLine();
-            if(name.isEmpty()) {
+            if (name.isEmpty()) {
                 System.out.println(names);
                 break;
             }

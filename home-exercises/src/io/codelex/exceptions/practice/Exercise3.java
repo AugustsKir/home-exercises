@@ -9,7 +9,7 @@ public class Exercise3 {
 
         //TODO - fix this method so it compiles
 
-        String line = null;
+        String line;
         try (RandomAccessFile input = new RandomAccessFile(file, "r")) {
             while ((line = input.readLine()) != null) {
                 System.out.println(line);
@@ -20,4 +20,5 @@ public class Exercise3 {
         }
 
     }
+
 }

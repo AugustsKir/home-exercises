@@ -5,11 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.nio.charset.Charset;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Histogram {
@@ -39,11 +35,11 @@ public class Histogram {
         List<Integer> listOfScores = new ArrayList<>();
         while ((score = reader.readLine()) != null) {
             String[] scoreArr = score.split(" ");
-            for (int i = 0; i < scoreArr.length ; i++) {
+            for (int i = 0; i < scoreArr.length; i++) {
                 listOfScores.add(Integer.parseInt(scoreArr[i]));
             }
         }
-        for (int i = 0; i < listOfScores.size() ; i++) {
+        for (int i = 0; i < listOfScores.size(); i++) {
             if (listOfScores.get(i) < 10) {
                 to10.append('*');
             } else if (listOfScores.get(i) <= 20) {
@@ -68,6 +64,6 @@ public class Histogram {
                 oneHundred.append('*');
             }
         }
-        return to10.toString() + "\n" + to20.toString() + "\n" + to30.toString() + "\n" + to40.toString() + "\n" + to50.toString() + "\n" + to60.toString() + "\n" + to70.toString() + "\n" + to80.toString() + "\n" + to90.toString() + "\n" + to99.toString() + "\n" + oneHundred.toString() ;
+        return to10 + "\n" + to20 + "\n" + to30 + "\n" + to40 + "\n" + to50 + "\n" + to60 + "\n" + to70 + "\n" + to80 + "\n" + to90 + "\n" + to99 + "\n" + oneHundred;
     }
 }

@@ -1,7 +1,5 @@
 package io.codelex.exceptions.practice;
 
-import java.lang.reflect.Method;
-
 public class Exercise2 {
     public static void methodA() throws ArithmeticException {
         try {

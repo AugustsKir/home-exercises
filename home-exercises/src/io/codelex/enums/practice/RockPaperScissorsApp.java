@@ -13,9 +13,9 @@ public class RockPaperScissorsApp {
             System.out.println("Scissor-Paper-Stone");
             System.out.println("Your turn (Enter s for scissor, p for paper, r for stone, q to quit): ");
             String playerInput = in.nextLine();
-            if(playerInput.charAt(0) == 'q') {
-                System.out.println("You won " + playerWIN + "times! ");
-                System.out.println("The computer won" + cpuWIN + "times!");
+            if (playerInput.charAt(0) == 'q') {
+                System.out.println("You won " + playerWIN + " times! ");
+                System.out.println("The computer won" + cpuWIN + " times!");
                 System.out.println("Shutting down!");
                 break;
             }
@@ -32,10 +32,10 @@ public class RockPaperScissorsApp {
             }
 
 
-
         }
 
     }
+
     private static String computerMove() {
         Random ran = new Random();
         int randomNum = ran.nextInt(RockPaperScissors.values().length);
@@ -43,6 +43,7 @@ public class RockPaperScissorsApp {
         System.out.println("The computer picked - " + move);
         return move;
     }
+
     private static boolean isPlayerWinner(String player, String cpu) {
         return player.equals(RockPaperScissors.ROCK.getInput()) && cpu.equals(RockPaperScissors.SCISSORS.getInput()) ||
                 player.equals(RockPaperScissors.SCISSORS.getInput()) && cpu.equals(RockPaperScissors.PAPER.getInput()) ||

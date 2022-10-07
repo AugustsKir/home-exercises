@@ -7,20 +7,12 @@ public enum CardinalPoints {
     SOUTH(1, "down"),
     EAST(2, "right"),
     WEST(3, "left");
-    private int value;
-    private String direction;
+    private final int value;
+    private final String direction;
 
     CardinalPoints(int value, String direction) {
         this.value = value;
         this.direction = direction;
-    }
-
-    public int getValue() {
-        return value;
-    }
-
-    public String getDirection() {
-        return direction;
     }
 
     public static void main(String[] args) {
@@ -35,5 +27,13 @@ public enum CardinalPoints {
             default -> System.out.println("Incorrect input!");
 
         }
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public String getDirection() {
+        return direction;
     }
 }

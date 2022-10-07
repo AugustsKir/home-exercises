@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Exercise4 {
 
     public static void main(String[] args) {
-        Scanner in= new Scanner(System.in);
+        Scanner in = new Scanner(System.in);
         try {
             System.out.println("Enter a number");
             double d = getInput(in.nextLine());
@@ -19,8 +19,8 @@ public class Exercise4 {
         } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("Enter number as first parameter.");
         }  //todo -
-         catch (NonPositiveNumberException e) {
-        System.out.println("Enter a positive number!");
+        catch (NonPositiveNumberException e) {
+            System.out.println("Enter a positive number!, shutting down!");
         }
 
     }
@@ -28,7 +28,7 @@ public class Exercise4 {
     static double getInput(String s) throws NonPositiveNumberException {
         double d = new Double(s);
         if (d < 0) {
-            throw new NonPositiveNumberException("Number is less than zero");
+            throw new NonPositiveNumberException("");
         } else return d;
     }
 }
