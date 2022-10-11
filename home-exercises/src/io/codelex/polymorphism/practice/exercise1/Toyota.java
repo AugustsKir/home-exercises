@@ -23,4 +23,9 @@ public class Toyota implements Car {
     public void useNitrousOxideEngine() {
 
     }
+
+    @Override
+    public String getName() {
+        return Toyota.class.getSimpleName();
+    }
 }

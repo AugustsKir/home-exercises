@@ -23,4 +23,9 @@ public class Bmw implements Car {
     public void useNitrousOxideEngine() {
 
     }
+
+    @Override
+    public String getName() {
+        return Bmw.class.getSimpleName();
+    }
 }

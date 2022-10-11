@@ -32,7 +32,7 @@ public class DragRace {
         carList.add(toyota);
         int count = 0;
         while (count < 10) {
-            for (int i = 0; i < carList.size() ; i++) {
+            for (int i = 0; i < carList.size(); i++) {
                 if (i == 2 && boost.isAssignableFrom(carList.get(i).getClass())) {
                     carList.get(i).useNitrousOxideEngine();
                     carList.get(i).speedUp();
@@ -44,12 +44,13 @@ public class DragRace {
         }
         Integer topSpeed = 0;
         String topSpeedName = "";
-        for (int i = 0; i < carList.size() ; i++) {
+        for (int i = 0; i < carList.size(); i++) {
             if (Integer.parseInt(carList.get(i).showCurrentSpeed()) > topSpeed) {
                 topSpeed = Integer.parseInt(carList.get(i).showCurrentSpeed());
+                topSpeedName = carList.get(i).getName();
             }
         }
-        System.out.println(topSpeed);
+        System.out.println(topSpeedName + " " + topSpeed);
 
 
     }

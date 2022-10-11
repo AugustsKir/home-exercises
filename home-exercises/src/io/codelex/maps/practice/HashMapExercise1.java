@@ -18,25 +18,25 @@ public class HashMapExercise1 {
 
         //TODO: Check if myMap contains key 3
         if (myMap.containsKey(3)) {
-          System.out.println("Contains! :)");
+            System.out.println("Contains! :)");
         } else {
-          System.out.println("Does not contains. :(");
+            System.out.println("Does not contains. :(");
         }
 
         //TODO: Check if myMap contains value "White"
         if (myMap.containsValue("White")) {
-          System.out.println("Contains! :)");
+            System.out.println("Contains! :)");
         } else {
-          System.out.println("Does not contains. :(");
+            System.out.println("Does not contains. :(");
         }
 
         //TODO: Create new map and clone values from myMap into new map
-        Map <Integer, String> newMap = new HashMap<>();
+        Map<Integer, String> newMap = new HashMap<>();
         newMap.putAll(newMap);
 
         //TODO: Iterate over map entries and print keys and values of each entry
-        for(Map.Entry entry: myMap.entrySet()){
-         System.out.println(entry.getKey() + " : " + entry.getValue());
+        for (Map.Entry entry : myMap.entrySet()) {
+            System.out.println(entry.getKey() + " : " + entry.getValue());
         }
 
         //TODO: Clear myMap

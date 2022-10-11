@@ -44,5 +44,6 @@ public abstract class Person {
     public void setId(int id) {
         this.id = id;
     }
+
     abstract void display();
 }

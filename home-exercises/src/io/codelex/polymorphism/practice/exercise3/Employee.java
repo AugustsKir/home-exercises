@@ -10,7 +10,7 @@ public class Employee extends Person {
 
     @Override
     void display() {
-        System.out.println("ID number : " + getId() +  " | Address :  " + getAddress() +  " | Full Name : " + getFirstName() + " " + getLastName() +  " | Job title :  " + getJobTitle());
+        System.out.println("ID number : " + getId() + " | Address :  " + getAddress() + " | Full Name : " + getFirstName() + " " + getLastName() + " | Job title :  " + getJobTitle());
     }
 
     public String getJobTitle() {

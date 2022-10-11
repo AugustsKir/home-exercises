@@ -23,4 +23,9 @@ public class Tesla implements Car {
     public void useNitrousOxideEngine() {
 
     }
+
+    @Override
+    public String getName() {
+        return Tesla.class.getSimpleName();
+    }
 }

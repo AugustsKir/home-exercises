@@ -23,4 +23,9 @@ public class Audi implements Car {
     public void useNitrousOxideEngine() {
 
     }
+
+    @Override
+    public String getName() {
+        return Audi.class.getSimpleName();
+    }
 }

@@ -18,6 +18,6 @@ public class Student extends Person {
 
     @Override
     void display() {
-        System.out.println("ID number : " + getId() +  " | Address : " + getAddress() +  " | Full Name :  " + getFirstName() + " " + getLastName() +  " | GPA :  " + getGpa());
+        System.out.println("ID number : " + getId() + " | Address : " + getAddress() + " | Full Name :  " + getFirstName() + " " + getLastName() + " | GPA :  " + getGpa());
     }
 }

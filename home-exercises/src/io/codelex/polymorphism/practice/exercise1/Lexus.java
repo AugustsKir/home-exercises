@@ -22,4 +22,9 @@ public class Lexus implements Car, Boost {
     public void startEngine() {
         System.out.println("Rrrrrrr.....");
     }
+
+    @Override
+    public String getName() {
+        return Lexus.class.getSimpleName();
+    }
 }

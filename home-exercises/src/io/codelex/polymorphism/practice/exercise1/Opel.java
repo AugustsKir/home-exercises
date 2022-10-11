@@ -26,4 +26,9 @@ public class Opel implements Car, Boost {
     public void useNitrousOxideEngine() {
         currentSpeed += 30;
     }
+
+    @Override
+    public String getName() {
+        return Opel.class.getSimpleName();
+    }
 }

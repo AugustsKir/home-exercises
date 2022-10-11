@@ -9,7 +9,10 @@ public interface Car {
 
     String showCurrentSpeed();
 
-     void startEngine();
-     void useNitrousOxideEngine();
+    void startEngine();
+
+    void useNitrousOxideEngine();
+
+    String getName();
 
 }
