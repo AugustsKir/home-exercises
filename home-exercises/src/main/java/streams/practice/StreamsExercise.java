@@ -28,7 +28,7 @@ public class StreamsExercise {
     }
 
     public static Integer countUsersOlderThen25(List<User> users) {
-        return Math.toIntExact(users.stream().map(User::getAge).map(n -> n > 25).count());
+        return Math.toIntExact(users.stream().map(User::getAge).filter(age -> age > 25).count());
     }
 
     public static List<String> mapToUpperCase(List<String> strings) {
@@ -40,10 +40,7 @@ public class StreamsExercise {
     }
 
     public static List<Integer> skip(List<Integer> integers, Integer toSkip) {
-        integers.removeIf(integer -> integer == 6);
-        List<Integer> newList = new ArrayList<>();
-        integers.forEach(newList::add);
-        return newList;
+        return integers.stream().skip(toSkip).toList();
     }
 
     public static List<String> getFirstNames(List<String> names) {
@@ -51,18 +48,17 @@ public class StreamsExercise {
     }
 
     public static List<String> getDistinctLetters(List<String> names) {
-        return Arrays.stream(names.stream().map(String::toCharArray).distinct().toString().split("")).toList();
+        return names.stream().map(c -> c.split("")).flatMap(Arrays::stream).distinct().collect(Collectors.toList());
     }
 
 
     public static String separateNamesByComma(List<User> users) {
-        StringBuilder out = new StringBuilder();
-        users.stream().map(user -> out.append(user + ","));
-        return out.substring(0, out.length() - 1);
+        String str = users.stream().map(User::getName).toList().toString();
+        return str.substring(1, str.length() - 1);
     }
 
     public static double getAverageAge(List<User> users) {
-        return (double)users.stream().map(User::getAge).mapToInt(Integer::intValue).sum() / users.size();
+        return (double) users.stream().map(User::getAge).mapToInt(Integer::intValue).sum() / users.size();
     }
 
     public static Integer getMaxAge(List<User> users) {
@@ -102,7 +98,7 @@ public class StreamsExercise {
     }
 
     public static List<User> sortByAge(List<User> users) {
-        return users.stream().sorted().toList();
+        return users.stream().sorted(Comparator.comparing(User::getAge)).collect(toList());
     }
 
     public static Stream<Integer> getBoxedStream(IntStream stream) {
@@ -110,7 +106,7 @@ public class StreamsExercise {
     }
 
     public static List<Integer> generateFirst10PrimeNumbers() {
-        return IntStream.rangeClosed(2, 10).filter(StreamsExercise::isPrime).boxed().collect(toList());
+        return IntStream.rangeClosed(2, 100).filter(StreamsExercise::isPrime).limit(10).boxed().collect(toList());
     }
 
     public static boolean isPrime(int number) {
@@ -118,12 +114,11 @@ public class StreamsExercise {
     }
 
     public static List<Integer> generate10RandomNumbers() {
-
-        Random rand = new Random();
-        IntStream randomStream = rand.ints();
-        List<Integer> out = new ArrayList<>();
-        randomStream.forEach(out::add);
-        return out;
+        List<Integer> random = new Random().ints(1, 999999)
+                .distinct()
+                .limit(10)
+                .boxed().toList();
+        return random;
     }
 
     public static User findOldest(List<User> users) {
@@ -131,10 +126,11 @@ public class StreamsExercise {
     }
 
     public static int sumAge(List<User> users) {
-        throw new UnsupportedOperationException();
+        return users.stream().map(User::getAge).mapToInt(Integer::intValue).sum();
     }
 
     public static IntSummaryStatistics ageSummaryStatistics(List<User> users) {
-        throw new UnsupportedOperationException();
+        IntSummaryStatistics out = users.stream().map(User::getAge).mapToInt(Integer::intValue).summaryStatistics();
+        return out;
     }
 }

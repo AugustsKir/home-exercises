@@ -32,6 +32,14 @@ public class User {
         this.male = male;
     }
 
+    public static List<User> getUsersWithAge(Integer... ages) {
+        List<User> users = new ArrayList<>();
+        for (Integer age : ages) {
+            users.add(new User(age));
+        }
+        return users;
+    }
+
     public String getName() {
         return name;
     }
@@ -42,13 +50,5 @@ public class User {
 
     public boolean isMale() {
         return male;
-    }
-
-    public static List<User> getUsersWithAge(Integer... ages) {
-        List<User> users = new ArrayList<>();
-        for (Integer age : ages) {
-            users.add(new User(age));
-        }
-        return users;
     }
 }
