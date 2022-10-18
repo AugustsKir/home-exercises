@@ -1,9 +1,9 @@
 package advancedtest.exercise1;
 
-public abstract class  Card {
-    private int number;
-    private String fullName;
-    private int ccv;
+public abstract class Card {
+    private final int number;
+    private final String fullName;
+    private final int ccv;
     private double balance;
 
     public Card(int number, String fullName, int ccv, double balance) {
@@ -22,5 +22,6 @@ public abstract class  Card {
     }
 
     public abstract void addMoney(double sum);
+
     public abstract void takeMoney(double sum) throws NotEnoughFundsException;
 }

@@ -1,6 +1,8 @@
 package advancedtest.exercise4;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -14,12 +16,13 @@ public class Reader {
         Path file = Paths.get("paraugsNew.txt");
 
         String line;
-        while((line = reader.readLine()) != null) {
+        while ((line = reader.readLine()) != null) {
             Files.write(file, Collections.singleton(reverse(line)), StandardCharsets.UTF_8);
         }
 
 
     }
+
     public static String reverse(String text) {
         int ind = text.length();
         char[] reversed = new char[text.length()];

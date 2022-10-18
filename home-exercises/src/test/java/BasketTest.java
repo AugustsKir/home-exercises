@@ -12,6 +12,7 @@ public class BasketTest {
         applesBasket.addToBasket(apple);
         Assertions.assertNotNull(applesBasket.getItem(0));
     }
+
     @Test
     void testMushroom() throws BasketFullException {
         Basket<Mushroom> mushroomBasket = new Basket<>();
@@ -19,6 +20,7 @@ public class BasketTest {
         mushroomBasket.addToBasket(mushroom);
         Assertions.assertNotNull(mushroomBasket.getItem(0));
     }
+
     @Test
     void testFullBasket() {
         Basket<Apples> applesBasket = new Basket<>();
@@ -27,6 +29,7 @@ public class BasketTest {
         Throwable exception = Assertions.assertThrows(BasketFullException.class, () -> applesBasket.addToBasket(apple));
         Assertions.assertEquals("Basket is full", exception.getMessage());
     }
+
     @Test
     void testEmptyBasket() {
         Basket<Apples> applesBasket = new Basket<>();

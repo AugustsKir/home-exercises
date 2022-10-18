@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Basket<T> {
-    private T items;
-    private int currentCount = 0;
     List<T> itemList = new ArrayList<>();
+    private int currentCount = 0;
 
     public Basket() {
     }
+
     public T getItem(int index) {
         return itemList.get(index);
     }
@@ -23,6 +23,7 @@ public class Basket<T> {
         }
 
     }
+
     public void removeFromBasket(T item) throws BasketEmptyException {
         if (currentCount <= 0) {
             throw new BasketEmptyException("Basket is empty");
@@ -30,10 +31,6 @@ public class Basket<T> {
             itemList.remove(item);
             currentCount--;
         }
-    }
-
-    public int getCurrentCount() { // testa nolukos
-        return currentCount;
     }
 
     public void setCurrentCount(int currentCount) {

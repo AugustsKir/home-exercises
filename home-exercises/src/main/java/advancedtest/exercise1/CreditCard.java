@@ -15,7 +15,8 @@ public class CreditCard extends Card {
     public void takeMoney(double sum) throws NotEnoughFundsException {
         if (getBalance() < sum) {
             throw new NotEnoughFundsException("Not enough funds!");
-        } else {setBalance(getBalance() - sum);
+        } else {
+            setBalance(getBalance() - sum);
         }
         if (getBalance() < 100) {
             System.out.println("Warning: low funds!");
