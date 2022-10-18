@@ -22,9 +22,11 @@ public class BasketTest {
     }
 
     @Test
-    void testFullBasket() {
+    void testFullBasket() throws BasketFullException {
         Basket<Apples> applesBasket = new Basket<>();
-        applesBasket.setCurrentCount(11);
+        for (int i = 0; i < 10; i++) {
+            applesBasket.addToBasket(new Apples());
+        }
         Apples apple = new Apples();
         Throwable exception = Assertions.assertThrows(BasketFullException.class, () -> applesBasket.addToBasket(apple));
         Assertions.assertEquals("Basket is full", exception.getMessage());
