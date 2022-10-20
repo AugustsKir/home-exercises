@@ -1,0 +1,3 @@
+// Izmantotie teksta faili atrodas resource mapē.
+// Pēc programmas palaišanas automātiski tiek izveidots jauns fails ar izmantotā faila nosaukumu + "letterlist".
+// Mazie un lielie burti netiek atsevišķi skaitīti.
