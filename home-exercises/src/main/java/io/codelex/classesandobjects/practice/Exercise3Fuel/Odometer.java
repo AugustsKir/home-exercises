@@ -1,10 +1,11 @@
 package io.codelex.classesandobjects.practice.Exercise3Fuel;
 
 public class Odometer {
+    private final int MAX_MILEAGE = 999999;
     private int mileage;
     private int startMileage;
     private FuelGauge fuelGauge;
-    private final int MAX_MILEAGE = 999999;
+
 
     public int getMileage() {
         return mileage;

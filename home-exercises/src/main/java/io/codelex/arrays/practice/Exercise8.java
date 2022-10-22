@@ -29,10 +29,6 @@ public class Exercise8 {
                 System.out.println("Congrats, you guessed it!");
                 break;
             }
-            //if(missedExceeded()) {
-            //System.out.println("Too many misses!");
-            //break;
-            //}
         }
 
     }

@@ -19,11 +19,11 @@ public class Car {
         return liters / ((endKilometers - startKilometers) / 100);
     }
 
-    public boolean isGasHog() {
+    public final boolean isGasHog() {
         return calculateConsumption() > 15;
     }
 
-    public boolean isEconomyCar() {
+    public final boolean isEconomyCar() {
         return calculateConsumption() < 15;
     }
 

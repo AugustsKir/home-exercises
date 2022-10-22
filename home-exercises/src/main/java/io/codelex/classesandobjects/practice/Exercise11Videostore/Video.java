@@ -4,34 +4,33 @@ import java.util.ArrayList;
 
 public class Video {
 
-    static String title;
+    private String title;
     static boolean checkedOut;
 
+    public Video(String title) {
+        this.title = title;
+        checkedOut = false;
+    }
 
     static ArrayList<Integer> ratings = new ArrayList<>();
 
-    public static String getTitle() {
+    public  String getTitle() {
         return title;
     }
 
-    public static void setTitle(String title) {
-        Video.title = title;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public static boolean getCheckedOut() {
         return checkedOut;
     }
 
-    public Video(String title) {
-        this.title = title;
-        checkedOut = false;
 
-
-    }
 
 
     public void setCheckedOut(boolean checkedOut) {
-        Video.checkedOut = checkedOut;
+        this.checkedOut = checkedOut;
     }
 
     @Override

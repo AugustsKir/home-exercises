@@ -2,14 +2,9 @@ package io.codelex.classesandobjects.practice.Exercise8SavingsAccount;
 
 public class SavingsAccount {
     private int balance;
-    static private double annualRate;
 
     public double getBalance() {
         return balance;
-    }
-
-    public void setBalance(int balance) {
-        this.balance = balance;
     }
 
     public SavingsAccount(int balance) {
