@@ -1,0 +1,3 @@
+// Izmantotais teksta fails atrodas resource mapē.
+// Pēc programmas palaišanas konsolē tiek izvadīts saskaitītais daudzums.
+// Mazie un lielie burti netiek atsevišķi skaitīti.
