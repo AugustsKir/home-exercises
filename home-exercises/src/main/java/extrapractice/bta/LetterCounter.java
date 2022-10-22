@@ -1,6 +1,9 @@
 package extrapractice.bta;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.stream.Collectors;
 
@@ -8,50 +11,36 @@ public class LetterCounter {
     static File f = new File("resources/text_file_1000_chars.txt");
 
     public static void main(String[] args) {
-        HashMap<String, Integer> letterHash = readChars(f);
-        writeFile(letterHash);
+        HashMap<String, Integer> letterMap = readChars(f);
+        System.out.println(mapToString(letterMap));
     }
 
-
-    public static <T, V> String mapToString(HashMap<T, V> map) {
-        return map.keySet().stream().map(key -> key + "=" + map.get(key)).collect(Collectors.joining(", ", "{", "}"));
-    }
 
     public static HashMap<String, Integer> readChars(File f) {
-        BufferedReader reader;
-        String line;
-        HashMap<String, Integer> letterHash = new HashMap<>();
+        HashMap<String, Integer> letterMap = new HashMap<>();
         try {
-            reader = new BufferedReader(new FileReader(f));
+            String line;
+            BufferedReader reader = new BufferedReader(new FileReader(f));
             while ((line = reader.readLine()) != null) {
-                String[] split = line.replaceAll(" ", "").replaceAll("[^a-zA-Z]", "").toUpperCase().split("");
+                String[] split = line.replaceAll("[^a-zA-Z]", "").toUpperCase().split("");
                 if (line.equals("")) {
                     continue;
                 }
                 for (String s : split) {
-                    if (!letterHash.containsKey(s)) {
-                        letterHash.put(s, 1);
+                    if (!letterMap.containsKey(s)) {
+                        letterMap.put(s, 1);
                     } else {
-                        letterHash.put(s, letterHash.get(s) + 1);
+                        letterMap.put(s, letterMap.get(s) + 1);
                     }
                 }
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        return letterHash;
+        return letterMap;
     }
 
-    public static void writeFile(HashMap<String, Integer> letterHash) {
-        PrintWriter writer;
-        File fNew = new File(f.getAbsolutePath().substring(0, f.getAbsolutePath().length() - 4) + "letterlist.txt");
-        try {
-            writer = new PrintWriter(fNew);
-            String out = mapToString(letterHash);
-            writer.println(out);
-            writer.flush();
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
+    private static String mapToString(HashMap<String, Integer> map) {
+        return map.keySet().stream().map(key -> key + " is present " + map.get(key) + " times.").collect(Collectors.joining("\n "));
     }
 }
